@@ -44,6 +44,6 @@ async def handle_message(evt: events.NewMessage.Event) -> None:
         await evt.reply(start_message)
         return
     url = public_url / str(pack_id(evt)) / get_file_name(evt)
-    await evt.reply(f"Link to download file: [{url}]({url})\n\n Thanks for Using @Link4Filesbot")
+    await evt.reply(f"Direct Link Generated Successfully.\n\n Link: [{url}]({url})\n\n Thanks for Using @Link4Filesbot\n<code>Your Link Expires in 24hr</code>")
     log.info(f"Replied with link for {evt.id} to {evt.from_id} in {evt.chat_id}")
     log.debug(f"Link to {evt.id} in {evt.chat_id}: {url}")
